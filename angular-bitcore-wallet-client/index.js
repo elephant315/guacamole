@@ -7,7 +7,7 @@ bwcModule.provider("bwcService", function() {
   var provider = {};
 
   var config = {
-    baseUrl: 'https://bws.bitpay.com/bws/api',
+    baseUrl: 'http://demoapi.poynt.kz/bws/api',
     verbose: null,
     transports: null
   };

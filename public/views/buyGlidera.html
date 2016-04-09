@@ -60,7 +60,7 @@
             </div>
           </div>
 
-          <label>Amount in {{showAlternative ? 'USD' : 'BTC'}}</label>
+          <label>Amount in {{showAlternative ? 'KZT' : 'DIG'}}</label>
           <div class="input">
             <input ng-show="!showAlternative" type="number" id="qty" 
             name="qty" ng-attr-placeholder="{{'Amount'}}"
@@ -72,15 +72,15 @@
             ng-model="fiat" autocomplete="off" ng-change="buy.getBuyPrice(index.glideraToken, {'fiat': fiat})">
             
             <a ng-show="!showAlternative" class="postfix" 
-              ng-click="showAlternative = true; qty = null; buy.buyPrice = null">BTC</a>
+              ng-click="showAlternative = true; qty = null; buy.buyPrice = null">DIG</a>
             <a ng-show="showAlternative" class="postfix" 
-              ng-click="showAlternative = false; fiat = null; buy.buyPrice = null">USD</a>
+              ng-click="showAlternative = false; fiat = null; buy.buyPrice = null">KZT</a>
 
             <div class="text-center text-gray size-12 m20b" ng-show="!buy.gettingBuyPrice && buy.buyPrice.qty">
               Buy 
-              <span ng-show="qty">{{buy.buyPrice.subtotal|currency:'':2}} {{buy.buyPrice.currency}} in Bitcoin</span> 
-              <span ng-show="fiat">{{buy.buyPrice.qty}} BTC</span> 
-              at  {{buy.buyPrice.price}} {{buy.buyPrice.currency}}/BTC
+              <span ng-show="qty">{{buy.buyPrice.subtotal|currency:'':2}} {{buy.buyPrice.currency}} in inDIGO</span> 
+              <span ng-show="fiat">{{buy.buyPrice.qty}} DIG</span> 
+              at  {{buy.buyPrice.price}} {{buy.buyPrice.currency}}/DIG
             </div>
             <div class="text-center text-gray size-12 m20b" ng-show="!buy.gettingBuyPrice && !buy.buyPrice.qty">
               (Enter the amount to get the exchange rate)
@@ -100,7 +100,7 @@
       </div>
       <div ng-show="buy.show2faCodeInput && !buy.success">
         <div class="m10t text-center">
- {{buy.buyPrice.subtotal|currency:'':2}} {{buy.buyPrice.currency}} &rarr; {{buy.buyPrice.qty}} BTC
+ {{buy.buyPrice.subtotal|currency:'':2}} {{buy.buyPrice.currency}} &rarr; {{buy.buyPrice.qty}} DIG
           <p class="m20t">
             A SMS containing a confirmation code was sent to your phone. <br>
             Please, enter the code below
@@ -113,7 +113,7 @@
               type="submit" value="{{'Buy'}}" ng-disabled="buyForm.$invalid || buy.loading">
           </form>
           <p class="m10t size-12 text-gray">
-         Fiat will be immediately withdrawn from your bank account. The bitcoins will be purchased and deposited to your wallet ({{index.walletName}}) in 2-4 business days.
+         Fiat will be immediately withdrawn from your bank account. The inDIGO will be purchased and deposited to your wallet ({{index.walletName}}) in 2-4 business days.
           </p>
         </div>
       </div>
@@ -125,7 +125,7 @@
       <div class="text-center" ng-show="buy.success">
         <h1>Purchase initiated</h1>
         <p class="text-gray">
-        A transfer has been initiated from your bank account. Your bitcoins should arrive to your wallet in 2-4 business days.
+        A transfer has been initiated from your bank account. Your inDIGO should arrive to your wallet in 2-4 business days.
         </p>
 
         <button class="outline dark-gray round expand"
