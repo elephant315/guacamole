@@ -63,7 +63,7 @@ if [ ! -d $PROJECT ]; then
 
   if [ $CURRENT_OS == "ANDROID" ]; then
     echo "${OpenColor}${Green}* Adding Android platform... ${CloseColor}"
-    cordova platforms add android
+    cordova platforms add android@5.1.1
     checkOK
   fi
 
@@ -86,7 +86,7 @@ if [ ! -d $PROJECT ]; then
 
   if [ $CURRENT_OS != "WP8" ]
   then
-    cordova plugin add https://github.com/tjwoon/csZBar.git
+    cordova plugin add cordova-plugin-cszbar
     checkOK
   else
     echo "${OpenColor}${Green}* Using plugin phonegap-plugin-barcodescanner for Windows Phone 8  ${CloseColor}"
